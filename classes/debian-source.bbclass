@@ -24,6 +24,7 @@ def fetch_Sources_xz(d):
     # but we don't want a path with 'pool'
     debian_mirror = d.getVar('DEBIAN_MIRROR', True)
     debian_mirror_nopool = debian_mirror.replace('/debian/pool', '/debian')
+    debian_mirror_nopool = debian_mirror.replace('/raspbian/pool', '/raspbian')
 
     # Get checksum of Sources.xz from Release file
     bb.plain('Checking Debian Release ...')
